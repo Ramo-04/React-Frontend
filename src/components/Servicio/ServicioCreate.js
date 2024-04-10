@@ -116,15 +116,22 @@ const ServicioCreate = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-                <Button variant="contained" color="success" style={{ marginRight: '-400px' }} onClick={handleClick}>
+                <Button variant="contained" color="success" style={{ marginRight: '-450px' }} onClick={handleClick}>
                   Registrar Servicio
                 </Button>
               </div>
             </Grid>
             <Grid item xs={12} sm={6}>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
-                <Button component={Link} to="/servicioupdate" variant="contained" color="primary" style={{ marginLeft: '-425px' }}>
+                <Button component={Link} to="/servicioupdate" variant="contained" color="primary" style={{ marginLeft: '-510px' }}>
                   Actualizar Servicio
+                </Button>
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={200}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
+                <Button component={Link} to="/usuariocreate" variant="contained" color="primary" style={{ marginLeft: '-50px'}}>
+                  Regresar
                 </Button>
               </div>
             </Grid>

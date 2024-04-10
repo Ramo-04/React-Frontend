@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Paper, TextField, Button, Grid, MenuItem } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ServicioUpdate = () => {
   const paperStyle = { padding: '50px 20px', width: '80%', margin: '20px auto' };  
@@ -44,11 +45,11 @@ const ServicioUpdate = () => {
         });
     }
 
-    // Fetch servicios
+    
     fetch('http://localhost:8086/api/Servicio/all')
       .then(res => res.json())
       .then(response => {
-        const data = response.data; // Acceder a la propiedad data de la respuesta
+        const data = response.data; 
         if (Array.isArray(data)) {
           setServicios(data);
         } else {
@@ -139,11 +140,16 @@ const ServicioUpdate = () => {
                 </Button>
               </div>
             </Grid>
+            <Grid item xs={12} sm={200}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
+                <Button component={Link} to="/serviciocreate" variant="contained" color="primary" style={{ marginLeft: '-50px'}}>
+                  Regresar
+                </Button>
+              </div>
+            </Grid>
           </Grid>
         </Box>
       </Paper>
-
-      {/* Mostrar servicios */}
       <h1>Servicios</h1>
       <Paper elevation={3} style={paperStyle}>
         {servicios.map(servicio => (

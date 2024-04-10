@@ -69,15 +69,6 @@ const EmpleadoCreate = () => {
               <TextField
                 required
                 id="outlined-required"
-                label="SUELDO"
-                fullWidth
-                value={sueldo_bruto}
-                type='number'
-                onChange={(e) => setSueldo(e.target.value)}
-              />
-              <TextField
-                required
-                id="outlined-required"
                 label="CARGO"
                 fullWidth
                 value={cargo}
@@ -87,11 +78,11 @@ const EmpleadoCreate = () => {
               <TextField
                 required
                 id="outlined-required"
-                label="NOMBRE COMPLETO"
+                label="SUELDO"
                 fullWidth
-                value={nombre_completo_empleado}
-                type='text'
-                onChange={(e) => setNombreCompleto(e.target.value)}
+                value={sueldo_bruto}
+                type='number'
+                onChange={(e) => setSueldo(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -104,18 +95,34 @@ const EmpleadoCreate = () => {
                 type='number'
                 onChange={(e) => setIdUsuario(e.target.value)}
               />
+              <TextField
+                required
+                id="outlined-required"
+                label="NOMBRE COMPLETO"
+                fullWidth
+                value={nombre_completo_empleado}
+                type='text'
+                onChange={(e) => setNombreCompleto(e.target.value)}
+              />
             </Grid>
             <Grid item xs={12} sm={6}>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-                <Button variant="contained" color="success" style={{ marginRight: '-400px' }} onClick={handleClick}>
+                <Button variant="contained" color="success" style={{ marginRight: '-450px' }} onClick={handleClick}>
                   Registrar Empleado
                 </Button>
               </div>
             </Grid>
             <Grid item xs={12} sm={6}>
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
-                <Button component={Link} to="/empleadoupdate" variant="contained" color="primary" style={{ marginLeft: '-425px' }}>
+                <Button component={Link} to="/empleadoupdate" variant="contained" color="primary" style={{ marginLeft: '-515px' }}>
                   Actualizar Empleado
+                </Button>
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={200}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
+                <Button component={Link} to="/usuariocreate" variant="contained" color="primary" style={{ marginLeft: '-50px'}}>
+                  Regresar
                 </Button>
               </div>
             </Grid>

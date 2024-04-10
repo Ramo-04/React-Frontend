@@ -64,18 +64,7 @@ const UsuarioCreate = () => {
           autoComplete="off"
         >
           <Grid container spacing={6}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                id="outlined-required"
-                label="CONTRASEÑA"
-                type='text'
-                fullWidth
-                value={contraseña}
-                onChange={(e) => setContraseña(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6}>
               <TextField
                 id="outlined-basic"
                 label="CORREO"
@@ -108,32 +97,44 @@ const UsuarioCreate = () => {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-                <Button variant="contained" color="success" style={{ marginRight: '-400px' }} onClick={handleClick}>
-                  Registrar Usuario
-                </Button>
-              </div>
+              <TextField
+                required
+                id="outlined-required"
+                label="CONTRASEÑA"
+                type='text'
+                fullWidth
+                value={contraseña}
+                onChange={(e) => setContraseña(e.target.value)}
+              />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
-                <Button component={Link} to="/update/:id" variant="contained" color="primary" style={{ marginLeft: '-560px' }}>
-                  Actualizar Usuario
-                </Button>
-              </div>
-              <Button component={Link} to="/inventariocreate" variant="contained" color="primary">
-                Crear Inventario
+             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginLeft:'450px' }}>
+
+               <Button variant="contained" color="success" style={{ width: '250px' }} onClick={handleClick}>
+                 Registrar Usuario
+               </Button>
+             <div style={{ display: 'flex', width: '250px', marginTop: '60px' }}>
+               <Button component={Link} to="/update/:id" variant="contained" color="primary" style={{ width: '400px' }}>
+                 Actualizar Usuario
+               </Button>
+             </div>
+             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '100px', marginLeft: '10px' }}>
+              <Button component={Link} to="/inventariocreate" variant="contained" color="primary" style={{ width: '200px' }}>
+                Ir a Inventario
               </Button>
-              <Button component={Link} to="/empleadocreate" variant="contained" color="primary">
-                Crear Empleado
+              <Button component={Link} to="/empleadocreate" variant="contained" color="primary" style={{ width: '200px', marginLeft: '10px' }}>
+                Ir a Empleado
               </Button>
-              <Button component={Link} to="/serviciocreate" variant="contained" color="primary">
-                Crear Servicio
+              <Button component={Link} to="/serviciocreate" variant="contained" color="primary" style={{ width: '200px', marginLeft: '10px' }}>
+                Ir a Servicio
               </Button>
-            </Grid>
+            </div>
+
+           </div>
+          </Grid>
           </Grid>
         </Box>
       </Paper>
-      {/* Sección para mostrar usuarios */}
       <h1>Usuarios</h1>
       <Paper elevation={3} style={paperStyle}>
         {usuarios.map(usuario => (

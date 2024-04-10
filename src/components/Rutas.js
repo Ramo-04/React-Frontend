@@ -1,18 +1,21 @@
 import React from 'react';
 import { Routes, Route, } from 'react-router-dom';
-import UsuarioCreate from './UsuarioCreate';
-import UsuarioUpdate from './UsuarioUpdate';
-import InventarioCreate from './InventarioCreate';
-import InventarioUpdate from './InventarioUpdate';
-import EmpleadoCreate from './EmpleadoCreate';
-import EmpleadoUpdate from './EmpleadoUpdate';
-import ServicioCreate from './ServicioCreate';
-import ServicioUpdate from './ServicioUpdate';
+import UsuarioCreate from './Usuario/UsuarioCreate';
+import UsuarioUpdate from './Usuario/UsuarioUpdate';
+
+import InventarioCreate from './Inventario/InventarioCreate';
+import InventarioUpdate from './Inventario/InventarioUpdate';
+
+import EmpleadoCreate from './Empleado/EmpleadoCreate';
+import EmpleadoUpdate from './Empleado/EmpleadoUpdate';
+
+import ServicioCreate from './Servicio/ServicioCreate';
+import ServicioUpdate from './Servicio/ServicioUpdate';
 const Rutas = () => {
   return (
     <Routes>
       {/*USUARIO*/ }
-      <Route path="/" element={<UsuarioCreate />} />
+      <Route path="/usuariocreate" element={<UsuarioCreate />} />
       <Route path="/update/:id" element={<UsuarioUpdate />}/>
       {/*USUARIO*/ }
       

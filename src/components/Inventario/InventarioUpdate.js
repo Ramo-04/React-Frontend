@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 const InventarioUpdate = () => {
   const paperStyle = { padding: '50px 20px', width: '80%', margin: '20px auto' };  
   const { id } = useParams(); 
-  const [updateId, setUpdateId] = useState(id || ''); // Estado para almacenar el ID que se actualizará
+  const [updateId, setUpdateId] = useState(id || ''); 
   const [entrada_inventario, setEntradaInventario] = useState('');
   const [salida_inventario, setSalidaInventario] = useState('');
   const [precio_entrada, setPrecioEntrada] = useState('');
@@ -18,7 +18,7 @@ const InventarioUpdate = () => {
   const handleClick = (e) => {
     e.preventDefault();
     const inventario = { entrada_inventario, salida_inventario, precio_entrada, precio_salida, producto, cantidad_inventario_stock };
-    fetch(`http://localhost:8086/api/Inventario/update/${updateId}`, { // Utiliza el ID actualizado
+    fetch(`http://localhost:8086/api/Inventario/update/${updateId}`, { 
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json' 
@@ -31,7 +31,7 @@ const InventarioUpdate = () => {
 
   useEffect(() => {
     if (id) {
-      setUpdateId(id); // Actualiza el estado del ID cuando cambia en la URL
+      setUpdateId(id); 
     }
   }, [id]);
 

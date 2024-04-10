@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Paper, TextField, Button, Grid, MenuItem } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const EmpleadoUpdate = () => {
   const paperStyle = { padding: '50px 20px', width: '80%', margin: '20px auto' };  
@@ -128,11 +129,17 @@ const EmpleadoUpdate = () => {
                 </Button>
               </div>
             </Grid>
+            <Grid item xs={12} sm={200}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
+                <Button component={Link} to="/empleadocreate" variant="contained" color="primary" style={{ marginLeft: '-50px'}}>
+                  Regresar
+                </Button>
+              </div>
+            </Grid>
           </Grid>
         </Box>
       </Paper>
 
-      {/* Mostrar empleados */}
       <h1>Empleados</h1>
       <Paper elevation={3} style={paperStyle}>
         {empleados.map(empleado => (

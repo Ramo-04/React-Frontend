@@ -38,7 +38,7 @@ const InventarioCreate = () => {
   }
 
   const fetchInventarios = () => {
-    fetch("http://localhost:8086/api/Inventario/all")
+    fetch(`http://localhost:8086/api/Inventario/all`)
       .then(res => res.json())
       .then((result) => {
         if (Array.isArray(result.data)) {
@@ -138,40 +138,47 @@ const InventarioCreate = () => {
                 </Button>
               </div>
             </Grid>
+            <Grid item xs={12} sm={200}>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '150px' }}>
+                <Button component={Link} to="/usuariocreate" variant="contained" color="primary" style={{ marginLeft: '-50px'}}>
+                  Regresar
+                </Button>
+              </div>
+            </Grid>
           </Grid>
         </Box>
       </Paper>
       <h1>Inventario</h1>
       <Paper elevation={3} style={paperStyle}>
-        {inventarios.map(inventario => (
-          <Paper elevation={6} style={{ margin: "10px", padding: "15px", textAlign: "left" }} key={inventario.id}>
-            Id: {inventario.id}
-            <br></br>
-            <br></br>
-            Entrada de Inventario: {inventario.entradaInventario}
-            <br></br>
-            <br></br>
-            Salida de Inventario: {inventario.salidaInventario}
-            <br></br>
-            <br></br>
-            Precio de Entrada: {inventario.precioEntrada}
-            <br></br>
-            <br></br>
-            Precio de Salida: {inventario.precioSalida}
-            <br></br>
-            <br></br>
-            Producto: {inventario.producto}
-            <br></br>
-            <br></br>
-            Cantidad en Stock: {inventario.cantidadInventarioStock}
-            <br></br>
-            <br></br>
-            <Button variant="contained" color="error" onClick={() => handleDelete(inventario.id)}>
-              Eliminar Inventario
-            </Button>
-          </Paper>
-        ))}
-      </Paper>
+  {inventarios.map(inventario => (
+    <Paper elevation={6} style={{ margin: "10px", padding: "15px", textAlign: "left" }} key={inventario.id}>
+      Id: {inventario.id}
+      <br></br>
+      <br></br>
+      Entrada de Inventario: {inventario.entrada_inventario}
+      <br></br>
+      <br></br>
+      Salida de Inventario: {inventario.salida_inventario}
+      <br></br>
+      <br></br>
+      Precio de Entrada: {inventario.precio_entrada}
+      <br></br>
+      <br></br>
+      Precio de Salida: {inventario.precio_salida}
+      <br></br>
+      <br></br>
+      Producto: {inventario.producto}
+      <br></br>
+      <br></br>
+      Cantidad en Stock: {inventario.cantidad_inventario_stock}
+      <br></br>
+      <br></br>
+      <Button variant="contained" color="error" onClick={() => handleDelete(inventario.id)}>
+        Eliminar Inventario
+      </Button>
+    </Paper>
+  ))}
+</Paper>
     </Container>
   )
 }
